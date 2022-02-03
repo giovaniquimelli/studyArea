@@ -15,6 +15,16 @@
 		3F30D7B227A95A9B0062D2C0 /* StudyAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D7B127A95A9B0062D2C0 /* StudyAreaTests.swift */; };
 		3F30D7BD27A95A9B0062D2C0 /* StudyAreaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D7BC27A95A9B0062D2C0 /* StudyAreaUITests.swift */; };
 		3F30D7EC27A96B600062D2C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D7EB27A96B600062D2C0 /* TabBarViewController.swift */; };
+		3FB1F68B27AAFBCC00426839 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F68A27AAFBCC00426839 /* HomeViewController.swift */; };
+		3FB1F69027AAFC2800426839 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F68F27AAFC2800426839 /* ProfileViewController.swift */; };
+		3FB1F69627AAFD6E00426839 /* StudyArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F69527AAFD6E00426839 /* StudyArea.swift */; };
+		3FB1F69E27AAFED100426839 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F69D27AAFED100426839 /* User.swift */; };
+		3FB1F6A527AAFF1400426839 /* AreaPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6A427AAFF1400426839 /* AreaPreviewTableViewCell.swift */; };
+		3FB1F6AD27AB000B00426839 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6AC27AB000B00426839 /* Extensions.swift */; };
+		3FB1F6B327AB007200426839 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6B227AB007200426839 /* HapticsManager.swift */; };
+		3FB1F6BB27AB009B00426839 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6BA27AB009B00426839 /* AuthManager.swift */; };
+		3FB1F6C027AB010900426839 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6BF27AB010800426839 /* StorageManager.swift */; };
+		3FB1F6C527AB011200426839 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6C427AB011200426839 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		3F30D7BC27A95A9B0062D2C0 /* StudyAreaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyAreaUITests.swift; sourceTree = "<group>"; };
 		3F30D7BE27A95A9B0062D2C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F30D7EB27A96B600062D2C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3FB1F68A27AAFBCC00426839 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3FB1F68F27AAFC2800426839 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3FB1F69527AAFD6E00426839 /* StudyArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyArea.swift; sourceTree = "<group>"; };
+		3FB1F69D27AAFED100426839 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3FB1F6A427AAFF1400426839 /* AreaPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		3FB1F6AC27AB000B00426839 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3FB1F6B227AB007200426839 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		3FB1F6BA27AB009B00426839 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		3FB1F6BF27AB010800426839 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		3FB1F6C427AB011200426839 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +119,9 @@
 		3F30D79927A95A920062D2C0 /* StudyArea */ = {
 			isa = PBXGroup;
 			children = (
+				3FB1F6B127AB006B00426839 /* Managers */,
+				3FB1F6A227AAFF0000426839 /* Views */,
+				3FB1F69427AAFD4A00426839 /* Models */,
 				3F30D7E927A96AED0062D2C0 /* Controllers */,
 				3F30D7E527A96AA00062D2C0 /* Other */,
 				3F30D7A027A95A920062D2C0 /* Main.storyboard */,
@@ -132,6 +155,7 @@
 				3F30D7A327A95A9B0062D2C0 /* Assets.xcassets */,
 				3F30D79C27A95A920062D2C0 /* SceneDelegate.swift */,
 				3F30D79A27A95A920062D2C0 /* AppDelegate.swift */,
+				3FB1F6AC27AB000B00426839 /* Extensions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -148,8 +172,46 @@
 			isa = PBXGroup;
 			children = (
 				3F30D7EB27A96B600062D2C0 /* TabBarViewController.swift */,
+				3FB1F68A27AAFBCC00426839 /* HomeViewController.swift */,
+				3FB1F68F27AAFC2800426839 /* ProfileViewController.swift */,
 			);
 			path = "Core Tabs";
+			sourceTree = "<group>";
+		};
+		3FB1F69427AAFD4A00426839 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FB1F69527AAFD6E00426839 /* StudyArea.swift */,
+				3FB1F69D27AAFED100426839 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3FB1F6A227AAFF0000426839 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3FB1F6A327AAFF0700426839 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3FB1F6A327AAFF0700426839 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3FB1F6A427AAFF1400426839 /* AreaPreviewTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3FB1F6B127AB006B00426839 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3FB1F6B227AB007200426839 /* HapticsManager.swift */,
+				3FB1F6BA27AB009B00426839 /* AuthManager.swift */,
+				3FB1F6BF27AB010800426839 /* StorageManager.swift */,
+				3FB1F6C427AB011200426839 /* DatabaseManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,9 +344,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB1F69627AAFD6E00426839 /* StudyArea.swift in Sources */,
+				3FB1F6AD27AB000B00426839 /* Extensions.swift in Sources */,
+				3FB1F6C527AB011200426839 /* DatabaseManager.swift in Sources */,
 				3F30D79B27A95A920062D2C0 /* AppDelegate.swift in Sources */,
+				3FB1F6C027AB010900426839 /* StorageManager.swift in Sources */,
 				3F30D7EC27A96B600062D2C0 /* TabBarViewController.swift in Sources */,
+				3FB1F69027AAFC2800426839 /* ProfileViewController.swift in Sources */,
 				3F30D79D27A95A920062D2C0 /* SceneDelegate.swift in Sources */,
+				3FB1F68B27AAFBCC00426839 /* HomeViewController.swift in Sources */,
+				3FB1F69E27AAFED100426839 /* User.swift in Sources */,
+				3FB1F6BB27AB009B00426839 /* AuthManager.swift in Sources */,
+				3FB1F6B327AB007200426839 /* HapticsManager.swift in Sources */,
+				3FB1F6A527AAFF1400426839 /* AreaPreviewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
