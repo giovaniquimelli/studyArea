@@ -95,7 +95,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AreaPreviewTableViewCell.identifier, for: indexPath) as? AreaPreviewTableViewCell else {
                 fatalError()
             }
-            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue))
+        cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue))
             return cell
     }
 

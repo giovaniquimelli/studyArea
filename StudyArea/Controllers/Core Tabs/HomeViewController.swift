@@ -13,6 +13,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let tableView = UITableView()
         tableView.register(AreaPreviewTableViewCell.self,
                            forCellReuseIdentifier: AreaPreviewTableViewCell.identifier)
+        tableView.register(SelectedAreaPreviewTableViewCell.self,
+                           forCellReuseIdentifier: SelectedAreaPreviewTableViewCell.identifier)
         return tableView
     }()
 
@@ -32,6 +34,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     private var areas: [StudyArea] = []
+    private var selectedArea: StudyArea?
 
     private func fetchAllAreas() {
         print("Fetching home feed...")
@@ -50,21 +53,53 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let area = areas[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: AreaPreviewTableViewCell.identifier, for: indexPath) as? AreaPreviewTableViewCell else {
-            fatalError()
+        
+        if let areaId = selectedArea?.identifier, areaId == area.identifier {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectedAreaPreviewTableViewCell.identifier, for: indexPath) as? SelectedAreaPreviewTableViewCell else {
+                fatalError()
+            }
+            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue))
+            
+    //        tableView.reloadRows(at: [indexPath], with: .automatic)
+            return cell
+        } else {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: AreaPreviewTableViewCell.identifier, for: indexPath) as? AreaPreviewTableViewCell else {
+                fatalError()
+            }
+            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue))
+            return cell
         }
-        cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue))
-        return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        let area = areas[indexPath.row]
+        if let selectedAreaId = self.selectedArea?.identifier {
+            return area.identifier == selectedAreaId ? 145 : 110
+        } else {
+            return 110
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
         HapticsManager.shared.vibrateForSelection()
+        
+        let area = areas[indexPath.row]
+        
+        if let areaId = selectedArea?.identifier, areaId == area.identifier {
+            selectedArea = nil
+            tableView.reloadData()
+            return
+        } else {
+            selectedArea = area
+            tableView.reloadData()
+        }
+        
+        
+//        print(area.isSelected)
 
 //        guard IAPManager.shared.canViewPost else {
 //            let vc = PayWallViewController()

@@ -1,5 +1,5 @@
 //
-//  AreaPreviewTableViewCell.swift
+//  SelectedAreaPreviewTableViewCell.swift
 //  StudyArea
 //
 //  Created by Gio on 02/02/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AreaPreviewTableViewCellViewModel {
+class SelectedAreaPreviewTableViewCellViewModel {
     var room: String
     var subject: String
     var teacher: String
@@ -21,8 +21,33 @@ class AreaPreviewTableViewCellViewModel {
     }
 }
 
-class AreaPreviewTableViewCell: UITableViewCell {
-    static let identifier = "AreaPreviewTableViewCell"
+class SelectedAreaPreviewTableViewCell: UITableViewCell {
+    static let identifier = "SelectedAreaPreviewTableViewCell"
+    
+    private let joinButton: UIButton = {
+        let joinButton = UIButton()
+        joinButton.backgroundColor = .systemBlue
+        joinButton.layer.cornerRadius = 8
+        joinButton.layer.shadowColor = UIColor.gray.cgColor
+        joinButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        joinButton.layer.shadowRadius = 4
+        joinButton.layer.shadowOpacity = 0.5
+        joinButton.setTitle("Enter Queue", for: .normal)
+        return joinButton
+    }()
+    
+    private let cancelButton: UIButton = {
+        let cancelButton = UIButton()
+        cancelButton.backgroundColor = .systemRed
+        cancelButton.layer.cornerRadius = 8
+        cancelButton.layer.shadowColor = UIColor.gray.cgColor
+        cancelButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        cancelButton.layer.shadowRadius = 4
+        cancelButton.layer.shadowOpacity = 0.5
+        cancelButton.setImage(UIImage(systemName: "multiply"), for: .normal)
+        cancelButton.tintColor = UIColor.white
+        return cancelButton
+    }()
     
     private let cardView: UIView = {
         let cardView = UIView()
@@ -70,6 +95,8 @@ class AreaPreviewTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.clipsToBounds = true
+        contentView.addSubview(joinButton)
+        contentView.addSubview(cancelButton)
         contentView.addSubview(cardView)
         contentView.addSubview(roomLabel)
         contentView.addSubview(subjectLabel)
@@ -83,6 +110,19 @@ class AreaPreviewTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        joinButton.frame = CGRect(
+            x: separatorInset.left,
+            y: 100,
+            width: contentView.width-separatorInset.left-separatorInset.left - 40,
+            height: 35
+        )
+        cancelButton.frame = CGRect(
+            x: joinButton.right + 5,
+            y: 100,
+            width: 35,
+            height: 35
+        )
+        
         cardView.frame = CGRect(
             x: separatorInset.left,
             y: 5,
@@ -124,7 +164,7 @@ class AreaPreviewTableViewCell: UITableViewCell {
         queueLabel.text = nil
     }
 
-    func configure(with viewModel: AreaPreviewTableViewCellViewModel) {
+    func configure(with viewModel: SelectedAreaPreviewTableViewCellViewModel) {
         roomLabel.text = viewModel.room
         subjectLabel.text = viewModel.subject
         teacherLabel.text = viewModel.teacher
