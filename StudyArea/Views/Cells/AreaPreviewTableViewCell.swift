@@ -27,11 +27,11 @@ class AreaPreviewTableViewCell: UITableViewCell {
     private let cardView: UIView = {
         let cardView = UIView()
         cardView.backgroundColor = .white
-        cardView.layer.cornerRadius = 8
+        cardView.layer.cornerRadius = 6
         cardView.layer.shadowColor = UIColor.gray.cgColor
         cardView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        cardView.layer.shadowRadius = 4
-        cardView.layer.shadowOpacity = 0.5
+        cardView.layer.shadowRadius = 3
+        cardView.layer.shadowOpacity = 0.3
         return cardView
     }()
         
@@ -91,7 +91,7 @@ class AreaPreviewTableViewCell: UITableViewCell {
         )
         roomLabel.frame = CGRect(
             x: separatorInset.left+10,
-            y: 15,
+            y: 16,
             width: (contentView.width-20-separatorInset.left-separatorInset.left)/3,
             height: 65
         )

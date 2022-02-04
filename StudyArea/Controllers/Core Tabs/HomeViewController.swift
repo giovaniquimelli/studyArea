@@ -75,11 +75,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let area = areas[indexPath.row]
         if let selectedAreaId = self.selectedArea?.identifier {
-            return area.identifier == selectedAreaId ? 145 : 110
-        } else {
-            return 110
+            return area.identifier == selectedAreaId ? 145 : 105
         }
-        
+        return 105
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

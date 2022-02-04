@@ -27,36 +27,45 @@ class SelectedAreaPreviewTableViewCell: UITableViewCell {
     private let joinButton: UIButton = {
         let joinButton = UIButton()
         joinButton.backgroundColor = .systemBlue
-        joinButton.layer.cornerRadius = 8
+        joinButton.layer.cornerRadius = 6
+        joinButton.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         joinButton.layer.shadowColor = UIColor.gray.cgColor
         joinButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        joinButton.layer.shadowRadius = 4
-        joinButton.layer.shadowOpacity = 0.5
+        joinButton.layer.shadowRadius = 3
+        joinButton.layer.shadowOpacity = 0.3
         joinButton.setTitle("Enter Queue", for: .normal)
+        joinButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         return joinButton
     }()
     
-    private let cancelButton: UIButton = {
-        let cancelButton = UIButton()
-        cancelButton.backgroundColor = .systemRed
-        cancelButton.layer.cornerRadius = 8
-        cancelButton.layer.shadowColor = UIColor.gray.cgColor
-        cancelButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        cancelButton.layer.shadowRadius = 4
-        cancelButton.layer.shadowOpacity = 0.5
-        cancelButton.setImage(UIImage(systemName: "multiply"), for: .normal)
-        cancelButton.tintColor = UIColor.white
-        return cancelButton
-    }()
+
+//    private let cancelButton: UIButton = {
+//        let cancelButton = UIButton()
+//        cancelButton.backgroundColor = .systemRed
+//        cancelButton.layer.cornerRadius = 6
+//        cancelButton.layer.maskedCorners = .layerMaxXMaxYCorner
+//        cancelButton.layer.shadowColor = UIColor.gray.cgColor
+//        cancelButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+//        cancelButton.layer.shadowRadius = 3
+//        cancelButton.layer.shadowOpacity = 0.3
+//
+//        let largeX = UIImage.SymbolConfiguration(pointSize: 22, weight: .semibold, scale: .medium)
+//
+//        let largeBoldX = UIImage(systemName: "multiply", withConfiguration: largeX)
+//        cancelButton.setImage(largeBoldX, for: .normal)
+//        cancelButton.tintColor = UIColor.white
+//        return cancelButton
+//    }()
     
     private let cardView: UIView = {
         let cardView = UIView()
         cardView.backgroundColor = .white
-        cardView.layer.cornerRadius = 8
+        cardView.layer.cornerRadius = 6
+        cardView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         cardView.layer.shadowColor = UIColor.gray.cgColor
         cardView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        cardView.layer.shadowRadius = 4
-        cardView.layer.shadowOpacity = 0.5
+        cardView.layer.shadowRadius = 3
+        cardView.layer.shadowOpacity = 0.3
         return cardView
     }()
         
@@ -96,7 +105,7 @@ class SelectedAreaPreviewTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.clipsToBounds = true
         contentView.addSubview(joinButton)
-        contentView.addSubview(cancelButton)
+//        contentView.addSubview(cancelButton)
         contentView.addSubview(cardView)
         contentView.addSubview(roomLabel)
         contentView.addSubview(subjectLabel)
@@ -112,16 +121,17 @@ class SelectedAreaPreviewTableViewCell: UITableViewCell {
         super.layoutSubviews()
         joinButton.frame = CGRect(
             x: separatorInset.left,
-            y: 100,
-            width: contentView.width-separatorInset.left-separatorInset.left - 40,
-            height: 35
+            y: 95,
+            width: contentView.width-separatorInset.left-separatorInset.left/* - 40*/,
+            height: 40
         )
-        cancelButton.frame = CGRect(
-            x: joinButton.right + 5,
-            y: 100,
-            width: 35,
-            height: 35
-        )
+        
+//        cancelButton.frame = CGRect(
+//            x: joinButton.right,
+//            y: 95,
+//            width: 40,
+//            height: 40
+//        )
         
         cardView.frame = CGRect(
             x: separatorInset.left,
@@ -131,7 +141,7 @@ class SelectedAreaPreviewTableViewCell: UITableViewCell {
         )
         roomLabel.frame = CGRect(
             x: separatorInset.left+10,
-            y: 15,
+            y: 16,
             width: (contentView.width-20-separatorInset.left-separatorInset.left)/3,
             height: 65
         )
