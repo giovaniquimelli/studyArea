@@ -12,27 +12,42 @@ class AreaPreviewTableViewCellViewModel {
     var subject: String
     var teacher: String
     var queue: String
+    var isFirstCell: Bool
 
-    init(room: String, subject: String, teacher: String, queue: String) {
+    init(room: String, subject: String, teacher: String, queue: String, isFirstCell: Bool) {
         self.room = room
         self.subject = subject
         self.teacher = teacher
         self.queue = queue
+        self.isFirstCell = isFirstCell
     }
 }
 
 class AreaPreviewTableViewCell: UITableViewCell {
     static let identifier = "AreaPreviewTableViewCell"
     
-    private let cardView: UIView = {
-        let cardView = UIView()
-        cardView.backgroundColor = .white
-        cardView.layer.cornerRadius = 6
-        cardView.layer.shadowColor = UIColor.gray.cgColor
-        cardView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        cardView.layer.shadowRadius = 3
-        cardView.layer.shadowOpacity = 0.3
-        return cardView
+//    private let cardView: UIView = {
+//        let cardView = UIView()
+//        cardView.backgroundColor = .white
+//        cardView.layer.cornerRadius = 6
+//        cardView.layer.shadowColor = UIColor.gray.cgColor
+//        cardView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+//        cardView.layer.shadowRadius = 3
+//        cardView.layer.shadowOpacity = 0.3
+//        return cardView
+//    }()
+    private var isFirstCell: Bool = false
+    
+    private let separatorTop: UIView = {
+        let separator = UIView()
+        separator.backgroundColor = .systemGray4
+        return separator
+    }()
+    
+    private let separator: UIView = {
+        let separator = UIView()
+        separator.backgroundColor = .systemGray4
+        return separator
     }()
         
     private let roomLabel: UILabel = {
@@ -70,7 +85,9 @@ class AreaPreviewTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.clipsToBounds = true
-        contentView.addSubview(cardView)
+//        contentView.addSubview(cardView)
+        contentView.addSubview(separatorTop)
+        contentView.addSubview(separator)
         contentView.addSubview(roomLabel)
         contentView.addSubview(subjectLabel)
         contentView.addSubview(teacherLabel)
@@ -83,36 +100,43 @@ class AreaPreviewTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        cardView.frame = CGRect(
-            x: separatorInset.left,
-            y: 5,
-            width: contentView.width-separatorInset.left-separatorInset.left,
-            height: 90
-        )
+//        cardView.frame = CGRect(
+//            x: separatorInset.left,
+//            y: 5,
+//            width: contentView.width-separatorInset.left-separatorInset.left,
+//            height: 90
+//        )
         roomLabel.frame = CGRect(
-            x: separatorInset.left+10,
+            x: separatorInset.left,
             y: 16,
-            width: (contentView.width-20-separatorInset.left-separatorInset.left)/3,
+            width: (contentView.width-separatorInset.left-separatorInset.left)/3,
             height: 65
         )
         subjectLabel.frame = CGRect(
             x: roomLabel.right,
             y: 15,
-            width: (contentView.width-20-separatorInset.left-separatorInset.left)/3*2,
+            width: (contentView.width-separatorInset.left-separatorInset.left)/3*2,
             height: 20
         )
         teacherLabel.frame = CGRect(
             x: roomLabel.right,
             y: subjectLabel.bottom+5,
-            width: (contentView.width-20-separatorInset.left-separatorInset.left)/3*2,
+            width: (contentView.width-separatorInset.left-separatorInset.left)/3*2,
             height: 20
         )
         queueLabel.frame = CGRect(
             x: roomLabel.right,
             y: teacherLabel.bottom+5,
-            width: (contentView.width-20-separatorInset.left-separatorInset.left)/3*2,
+            width: (contentView.width-separatorInset.left-separatorInset.left)/3*2,
             height: 20
         )
+        
+        if isFirstCell == true {
+            separatorTop.frame = CGRect(x: 0, y: 0, width: contentView.width, height: 1)
+        } else {
+            separatorTop.frame = .null
+        }
+        separator.frame = CGRect(x: 0, y: 101, width: contentView.width, height:1)
 //        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15))
     }
 
@@ -122,6 +146,7 @@ class AreaPreviewTableViewCell: UITableViewCell {
         subjectLabel.text = nil
         teacherLabel.text = nil
         queueLabel.text = nil
+        isFirstCell = false
     }
 
     func configure(with viewModel: AreaPreviewTableViewCellViewModel) {
@@ -129,6 +154,7 @@ class AreaPreviewTableViewCell: UITableViewCell {
         subjectLabel.text = viewModel.subject
         teacherLabel.text = viewModel.teacher
         queueLabel.text = viewModel.queue
+        isFirstCell = viewModel.isFirstCell
     }
 }
 

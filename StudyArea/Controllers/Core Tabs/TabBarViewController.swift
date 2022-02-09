@@ -10,6 +10,8 @@ import UIKit
 class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.isTranslucent = false
+        tabBar.barTintColor = .systemGray6
         
         setUpControllers()
     }
@@ -26,7 +28,7 @@ class TabBarViewController: UITabBarController {
         home.title = "Study Area"
         let profile = ProfileViewController(currentEmail: "currentUserEmail")
         profile.title = "Profile"
-
+        
         home.navigationItem.largeTitleDisplayMode = .always
         profile.navigationItem.largeTitleDisplayMode = .always
 

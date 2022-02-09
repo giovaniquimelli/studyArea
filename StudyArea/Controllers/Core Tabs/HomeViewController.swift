@@ -20,7 +20,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,6 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        tableView.backgroundColor = .systemGray6
         tableView.frame = view.bounds
     }
 
@@ -53,12 +53,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let area = areas[indexPath.row]
+        let isFirstCell = indexPath.row == 0
         
         if let areaId = selectedArea?.identifier, areaId == area.identifier {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectedAreaPreviewTableViewCell.identifier, for: indexPath) as? SelectedAreaPreviewTableViewCell else {
                 fatalError()
             }
-            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue))
+            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue, isFirstCell: isFirstCell))
             
     //        tableView.reloadRows(at: [indexPath], with: .automatic)
             return cell
@@ -67,7 +68,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AreaPreviewTableViewCell.identifier, for: indexPath) as? AreaPreviewTableViewCell else {
                 fatalError()
             }
-            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue))
+            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue, isFirstCell: isFirstCell))
             return cell
         }
     }
@@ -75,9 +76,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let area = areas[indexPath.row]
         if let selectedAreaId = self.selectedArea?.identifier {
-            return area.identifier == selectedAreaId ? 145 : 105
+            return area.identifier == selectedAreaId ? 142 : 102
         }
-        return 105
+        return 102
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

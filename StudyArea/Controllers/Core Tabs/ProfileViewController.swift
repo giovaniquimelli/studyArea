@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray6
         setUpSignOutButton()
         setUpTable()
         title = "Profile"
@@ -92,10 +92,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let area = areas[indexPath.row]
+            let isFirstCell = indexPath.row == 0
+        
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AreaPreviewTableViewCell.identifier, for: indexPath) as? AreaPreviewTableViewCell else {
                 fatalError()
             }
-        cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue))
+        cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue, isFirstCell: isFirstCell))
             return cell
     }
 
