@@ -16,6 +16,10 @@
 		3F30D7BD27A95A9B0062D2C0 /* StudyAreaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D7BC27A95A9B0062D2C0 /* StudyAreaUITests.swift */; };
 		3F30D7EC27A96B600062D2C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D7EB27A96B600062D2C0 /* TabBarViewController.swift */; };
 		3F80FAC527AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80FAC427AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift */; };
+		3F98F1DF27B427940091A2E6 /* ProfileItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98F1DE27B427940091A2E6 /* ProfileItemTableViewCell.swift */; };
+		3F98F1E427B427A60091A2E6 /* EmptyItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98F1E327B427A60091A2E6 /* EmptyItemTableViewCell.swift */; };
+		3F98F1E927B427BE0091A2E6 /* ProfileLogOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98F1E827B427BE0091A2E6 /* ProfileLogOutTableViewCell.swift */; };
+		3F98F1F127B458F90091A2E6 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98F1F027B458F90091A2E6 /* ProfileRow.swift */; };
 		3FB1F68B27AAFBCC00426839 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F68A27AAFBCC00426839 /* HomeViewController.swift */; };
 		3FB1F69027AAFC2800426839 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F68F27AAFC2800426839 /* ProfileViewController.swift */; };
 		3FB1F69627AAFD6E00426839 /* StudyArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F69527AAFD6E00426839 /* StudyArea.swift */; };
@@ -61,6 +65,10 @@
 		3F30D7BE27A95A9B0062D2C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F30D7EB27A96B600062D2C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3F80FAC427AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedAreaPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		3F98F1DE27B427940091A2E6 /* ProfileItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemTableViewCell.swift; sourceTree = "<group>"; };
+		3F98F1E327B427A60091A2E6 /* EmptyItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyItemTableViewCell.swift; sourceTree = "<group>"; };
+		3F98F1E827B427BE0091A2E6 /* ProfileLogOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLogOutTableViewCell.swift; sourceTree = "<group>"; };
+		3F98F1F027B458F90091A2E6 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		3FB1F68A27AAFBCC00426839 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3FB1F68F27AAFC2800426839 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3FB1F69527AAFD6E00426839 /* StudyArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyArea.swift; sourceTree = "<group>"; };
@@ -185,6 +193,7 @@
 			children = (
 				3FB1F69527AAFD6E00426839 /* StudyArea.swift */,
 				3FB1F69D27AAFED100426839 /* User.swift */,
+				3F98F1F027B458F90091A2E6 /* ProfileRow.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +211,9 @@
 			children = (
 				3F80FAC427AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift */,
 				3FB1F6A427AAFF1400426839 /* AreaPreviewTableViewCell.swift */,
+				3F98F1DE27B427940091A2E6 /* ProfileItemTableViewCell.swift */,
+				3F98F1E327B427A60091A2E6 /* EmptyItemTableViewCell.swift */,
+				3F98F1E827B427BE0091A2E6 /* ProfileLogOutTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -350,15 +362,19 @@
 				3FB1F69627AAFD6E00426839 /* StudyArea.swift in Sources */,
 				3FB1F6AD27AB000B00426839 /* Extensions.swift in Sources */,
 				3FB1F6C527AB011200426839 /* DatabaseManager.swift in Sources */,
+				3F98F1DF27B427940091A2E6 /* ProfileItemTableViewCell.swift in Sources */,
 				3F30D79B27A95A920062D2C0 /* AppDelegate.swift in Sources */,
 				3FB1F6C027AB010900426839 /* StorageManager.swift in Sources */,
 				3F30D7EC27A96B600062D2C0 /* TabBarViewController.swift in Sources */,
 				3FB1F69027AAFC2800426839 /* ProfileViewController.swift in Sources */,
+				3F98F1E427B427A60091A2E6 /* EmptyItemTableViewCell.swift in Sources */,
 				3F30D79D27A95A920062D2C0 /* SceneDelegate.swift in Sources */,
+				3F98F1F127B458F90091A2E6 /* ProfileRow.swift in Sources */,
 				3F80FAC527AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift in Sources */,
 				3FB1F68B27AAFBCC00426839 /* HomeViewController.swift in Sources */,
 				3FB1F69E27AAFED100426839 /* User.swift in Sources */,
 				3FB1F6BB27AB009B00426839 /* AuthManager.swift in Sources */,
+				3F98F1E927B427BE0091A2E6 /* ProfileLogOutTableViewCell.swift in Sources */,
 				3FB1F6B327AB007200426839 /* HapticsManager.swift in Sources */,
 				3FB1F6A527AAFF1400426839 /* AreaPreviewTableViewCell.swift in Sources */,
 			);
