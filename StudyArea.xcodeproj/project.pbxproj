@@ -30,6 +30,8 @@
 		3FB1F6BB27AB009B00426839 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6BA27AB009B00426839 /* AuthManager.swift */; };
 		3FB1F6C027AB010900426839 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6BF27AB010800426839 /* StorageManager.swift */; };
 		3FB1F6C527AB011200426839 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1F6C427AB011200426839 /* DatabaseManager.swift */; };
+		3FDB0AD227C55250006A0A2A /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB0AD127C55250006A0A2A /* SessionViewController.swift */; };
+		3FDB0ADA27C563C9006A0A2A /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB0AD927C563C9006A0A2A /* Messages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		3FB1F6BA27AB009B00426839 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		3FB1F6BF27AB010800426839 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3FB1F6C427AB011200426839 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		3FDB0AD127C55250006A0A2A /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		3FDB0AD927C563C9006A0A2A /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 		3F30D7E927A96AED0062D2C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FDB0AD027C55230006A0A2A /* Session */,
 				3F30D7EA27A96AF70062D2C0 /* Core Tabs */,
 			);
 			path = Controllers;
@@ -194,6 +199,7 @@
 				3FB1F69527AAFD6E00426839 /* StudyArea.swift */,
 				3FB1F69D27AAFED100426839 /* User.swift */,
 				3F98F1F027B458F90091A2E6 /* ProfileRow.swift */,
+				3FDB0AD927C563C9006A0A2A /* Messages.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +233,14 @@
 				3FB1F6C427AB011200426839 /* DatabaseManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		3FDB0AD027C55230006A0A2A /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				3FDB0AD127C55250006A0A2A /* SessionViewController.swift */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,9 +386,11 @@
 				3F98F1F127B458F90091A2E6 /* ProfileRow.swift in Sources */,
 				3F80FAC527AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift in Sources */,
 				3FB1F68B27AAFBCC00426839 /* HomeViewController.swift in Sources */,
+				3FDB0AD227C55250006A0A2A /* SessionViewController.swift in Sources */,
 				3FB1F69E27AAFED100426839 /* User.swift in Sources */,
 				3FB1F6BB27AB009B00426839 /* AuthManager.swift in Sources */,
 				3F98F1E927B427BE0091A2E6 /* ProfileLogOutTableViewCell.swift in Sources */,
+				3FDB0ADA27C563C9006A0A2A /* Messages.swift in Sources */,
 				3FB1F6B327AB007200426839 /* HapticsManager.swift in Sources */,
 				3FB1F6A527AAFF1400426839 /* AreaPreviewTableViewCell.swift in Sources */,
 			);

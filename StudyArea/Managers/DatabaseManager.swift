@@ -82,6 +82,51 @@ final class DatabaseManager {
 //                }
 //            }
     }
+    
+    public func getAllMessages(
+        completion: @escaping ([Messages]) -> Void
+    ) {
+//        database
+//            .collection("users")
+//            .getDocuments { [weak self] snapshot, error in
+//                guard let documents = snapshot?.documents.compactMap({ $0.data() }),
+//                      error == nil else {
+//                    return
+//                }
+
+//                let emails: [String] = documents.compactMap({ $0["email"] as? String })
+//                print(emails)
+//                guard !emails.isEmpty else {
+//                    completion([])
+//                    return
+//                }
+
+//                let group = DispatchGroup()
+                let result: [Messages] = [
+                    Messages(text: "Portuguese - Teacher Jorge", sender: MessageSender.system),
+                    Messages(text: "Queue: 2...", sender: MessageSender.system),
+                    Messages(text: "Queue: 1...", sender: MessageSender.system),
+                    Messages(text: "Session initiated!", sender: MessageSender.system),
+                    Messages(text: "Good morning! What can I help you with?", sender: MessageSender.teacher),
+                    Messages(text: "Good morning teacher Jorge...", sender: MessageSender.student),
+                ]
+
+//                for email in emails {
+//                    group.enter()
+//                    self?.getPosts(for: email) { userPosts in
+//                        defer {
+//                            group.leave()
+//                        }
+//                        result.append(contentsOf: userPosts)
+//                    }
+//                }
+//
+//                group.notify(queue: .global()) {
+//                    print("Feed posts: \(result.count)")
+                    completion(result)
+//                }
+//            }
+    }
 
 //    public func getPosts(
 //        for email: String,

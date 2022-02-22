@@ -97,20 +97,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.reloadData()
         }
         
-        
-//        print(area.isSelected)
-
-//        guard IAPManager.shared.canViewPost else {
-//            let vc = PayWallViewController()
-//            present(vc, animated: true, completion: nil)
-//            return
-//        }
-
-//        let vc = ViewPostViewController(post: areas[indexPath.row])
-//        vc.navigationItem.largeTitleDisplayMode = .never
-//        vc.title = "Post"
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = SessionViewController(area: area)
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.title = "Study Area Session"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
-
