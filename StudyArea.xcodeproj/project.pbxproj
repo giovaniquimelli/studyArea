@@ -15,6 +15,9 @@
 		3F30D7B227A95A9B0062D2C0 /* StudyAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D7B127A95A9B0062D2C0 /* StudyAreaTests.swift */; };
 		3F30D7BD27A95A9B0062D2C0 /* StudyAreaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D7BC27A95A9B0062D2C0 /* StudyAreaUITests.swift */; };
 		3F30D7EC27A96B600062D2C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D7EB27A96B600062D2C0 /* TabBarViewController.swift */; };
+		3F75A0FB27C6B3E7006D3F35 /* SystemMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75A0FA27C6B3E7006D3F35 /* SystemMessageTableViewCell.swift */; };
+		3F75A10327C6B5A2006D3F35 /* TeacherMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75A10227C6B5A2006D3F35 /* TeacherMessageTableViewCell.swift */; };
+		3F75A10827C6B874006D3F35 /* StudentMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75A10727C6B874006D3F35 /* StudentMessageTableViewCell.swift */; };
 		3F80FAC527AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F80FAC427AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift */; };
 		3F98F1DF27B427940091A2E6 /* ProfileItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98F1DE27B427940091A2E6 /* ProfileItemTableViewCell.swift */; };
 		3F98F1E427B427A60091A2E6 /* EmptyItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F98F1E327B427A60091A2E6 /* EmptyItemTableViewCell.swift */; };
@@ -66,6 +69,9 @@
 		3F30D7BC27A95A9B0062D2C0 /* StudyAreaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyAreaUITests.swift; sourceTree = "<group>"; };
 		3F30D7BE27A95A9B0062D2C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F30D7EB27A96B600062D2C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3F75A0FA27C6B3E7006D3F35 /* SystemMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMessageTableViewCell.swift; sourceTree = "<group>"; };
+		3F75A10227C6B5A2006D3F35 /* TeacherMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherMessageTableViewCell.swift; sourceTree = "<group>"; };
+		3F75A10727C6B874006D3F35 /* StudentMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMessageTableViewCell.swift; sourceTree = "<group>"; };
 		3F80FAC427AC58F400BCD0B0 /* SelectedAreaPreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedAreaPreviewTableViewCell.swift; sourceTree = "<group>"; };
 		3F98F1DE27B427940091A2E6 /* ProfileItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemTableViewCell.swift; sourceTree = "<group>"; };
 		3F98F1E327B427A60091A2E6 /* EmptyItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -193,6 +199,16 @@
 			path = "Core Tabs";
 			sourceTree = "<group>";
 		};
+		3F75A0F927C6B3C4006D3F35 /* MessageCells */ = {
+			isa = PBXGroup;
+			children = (
+				3F75A0FA27C6B3E7006D3F35 /* SystemMessageTableViewCell.swift */,
+				3F75A10227C6B5A2006D3F35 /* TeacherMessageTableViewCell.swift */,
+				3F75A10727C6B874006D3F35 /* StudentMessageTableViewCell.swift */,
+			);
+			path = MessageCells;
+			sourceTree = "<group>";
+		};
 		3FB1F69427AAFD4A00426839 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +223,7 @@
 		3FB1F6A227AAFF0000426839 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F75A0F927C6B3C4006D3F35 /* MessageCells */,
 				3FB1F6A327AAFF0700426839 /* Cells */,
 			);
 			path = Views;
@@ -373,9 +390,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F75A10327C6B5A2006D3F35 /* TeacherMessageTableViewCell.swift in Sources */,
 				3FB1F69627AAFD6E00426839 /* StudyArea.swift in Sources */,
 				3FB1F6AD27AB000B00426839 /* Extensions.swift in Sources */,
 				3FB1F6C527AB011200426839 /* DatabaseManager.swift in Sources */,
+				3F75A10827C6B874006D3F35 /* StudentMessageTableViewCell.swift in Sources */,
 				3F98F1DF27B427940091A2E6 /* ProfileItemTableViewCell.swift in Sources */,
 				3F30D79B27A95A920062D2C0 /* AppDelegate.swift in Sources */,
 				3FB1F6C027AB010900426839 /* StorageManager.swift in Sources */,
@@ -393,6 +412,7 @@
 				3FDB0ADA27C563C9006A0A2A /* Messages.swift in Sources */,
 				3FB1F6B327AB007200426839 /* HapticsManager.swift in Sources */,
 				3FB1F6A527AAFF1400426839 /* AreaPreviewTableViewCell.swift in Sources */,
+				3F75A0FB27C6B3E7006D3F35 /* SystemMessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

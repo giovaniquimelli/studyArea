@@ -61,7 +61,7 @@ final class DatabaseManager {
 
 //                let group = DispatchGroup()
                 let result: [StudyArea] = [
-                    StudyArea(identifier: "1", room: "03", subject: "Math", teacher: "Jorge", queue: "queue: 3"),
+                    StudyArea(identifier: "1", room: "03", subject: "Math", teacher: "Jorge", queue: "queue: 2"),
                     StudyArea(identifier: "2", room: "05", subject: "Portuguese", teacher: "Mateus", queue: "queue: 7"),
                     StudyArea(identifier: "3", room: "08", subject: "Geography", teacher: "Ana", queue: "queue: 1")
                 ]
@@ -103,7 +103,7 @@ final class DatabaseManager {
 
 //                let group = DispatchGroup()
                 let result: [Messages] = [
-                    Messages(text: "Portuguese - Teacher Jorge", sender: MessageSender.system),
+                    Messages(text: "Math - Teacher Jorge", sender: MessageSender.system),
                     Messages(text: "Queue: 2...", sender: MessageSender.system),
                     Messages(text: "Queue: 1...", sender: MessageSender.system),
                     Messages(text: "Session initiated!", sender: MessageSender.system),

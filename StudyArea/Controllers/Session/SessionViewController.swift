@@ -22,12 +22,12 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(TeacherChatBubbleTableViewCell.self,
-                           forCellReuseIdentifier: TeacherChatBubbleTableViewCell.identifier)
-        tableView.register(StudentChatBubbleTableViewCell.self,
-                           forCellReuseIdentifier: StudentChatBubbleTableViewCell.identifier)
         tableView.register(SystemMessageTableViewCell.self,
                            forCellReuseIdentifier: SystemMessageTableViewCell.identifier)
+        tableView.register(TeacherMessageTableViewCell.self,
+                           forCellReuseIdentifier: TeacherMessageTableViewCell.identifier)
+        tableView.register(StudentMessageTableViewCell.self,
+                           forCellReuseIdentifier: StudentMessageTableViewCell.identifier)
         return tableView
     }()
 
@@ -73,6 +73,7 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.addSubview(textInputButton)
         view.addSubview(sendButton)
         fetchAllMessages()
+        configureButtons()
     }
 
     override func viewDidLayoutSubviews() {
@@ -82,11 +83,43 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         textInputButton.frame = CGRect(x: 10, y: view.height-50, width: view.width-60, height: 40)
         sendButton.frame = CGRect(x: textInputButton.right, y: view.height-50, width: 40, height: 40)
     }
+    
+    private func configureButtons() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Cancel",
+            style: .done,
+            target: self,
+            action: #selector(didTapCancel)
+        )
+
+    }
+
+    @objc private func didTapCancel() {
+//        dismiss(animated: true, completion: nil)
+        
+        let alert = UIAlertController(
+            title: "Cancel session",
+            message: "Do you wish to cancel your current study session?",
+            preferredStyle: .actionSheet
+        )
+
+        func goBackHandler(alert: UIAlertAction) {
+            navigationController?.popViewController(animated: true)
+        }
+
+        let goBackAction = UIAlertAction(title: "Yes", style: .destructive, handler: goBackHandler)
+        let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+//        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        alert.addAction(goBackAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 
     private var messages: [Messages] = []
 
     private func fetchAllMessages() {
-        DatabaseManager.shared.getAllPosts { [weak self] messages in
+        DatabaseManager.shared.getAllMessages{ [weak self] messages in
             self?.messages = messages
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -101,53 +134,36 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
         
-//        if let areaId = selectedArea?.identifier, areaId == area.identifier {
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: SelectedAreaPreviewTableViewCell.identifier, for: indexPath) as? SelectedAreaPreviewTableViewCell else {
-//                fatalError()
-//            }
-//            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue, isFirstCell: isFirstCell))
-//
-//    //        tableView.reloadRows(at: [indexPath], with: .automatic)
-//            return cell
-//        } else {
-//
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: AreaPreviewTableViewCell.identifier, for: indexPath) as? AreaPreviewTableViewCell else {
-//                fatalError()
-//            }
-//            cell.configure(with: .init(room: area.room, subject: area.subject, teacher: area.teacher, queue: area.queue, isFirstCell: isFirstCell))
-//            return cell
-//        }
+        if message.sender == MessageSender.system {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SystemMessageTableViewCell.identifier, for: indexPath) as? SystemMessageTableViewCell else {
+                fatalError()
+            }
+            cell.configure(with: .init(text: message.text))
+
+            return cell
+        } else if message.sender == MessageSender.teacher {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TeacherMessageTableViewCell.identifier, for: indexPath) as? TeacherMessageTableViewCell else {
+                fatalError()
+            }
+            cell.configure(with: .init(text: message.text))
+
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: StudentMessageTableViewCell.identifier, for: indexPath) as? StudentMessageTableViewCell else {
+                fatalError()
+            }
+            cell.configure(with: .init(text: message.text))
+
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let message = messages[indexPath.row]
-//        if let selectedAreaId = self.selectedArea?.identifier {
-//            return area.identifier == selectedAreaId ? 142 : 102
-//        }
-//        return 102
+        return 55
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-        HapticsManager.shared.vibrateForSelection()
-        
-        let message = messages[indexPath.row]
-        
-//        if let areaId = selectedArea?.identifier, areaId == area.identifier {
-//            selectedArea = nil
-//            tableView.reloadData()
-//            return
-//        } else {
-//            selectedArea = area
-//            tableView.reloadData()
-//        }
-        
-//        let vc = SessionViewController(area: area)
-//        vc.navigationItem.largeTitleDisplayMode = .never
-//        vc.title = "Study Area Session"
-//        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
-

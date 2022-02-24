@@ -60,7 +60,7 @@ class ProfileItemTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .right
-        label.textColor = .systemGray3
+        label.textColor = .systemGray2
         return label
     }()
 
@@ -78,7 +78,7 @@ class ProfileItemTableViewCell: UITableViewCell {
 
         let largeBoldbutton = UIImage(systemName: "chevron.forward", withConfiguration: largebutton)
         button.setImage(largeBoldbutton, for: .normal)
-        button.tintColor = .systemGray3
+        button.tintColor = .systemGray2
         return button
     }()
 
