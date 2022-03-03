@@ -157,6 +157,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         HapticsManager.shared.vibrateForSelection()
+        
+        if indexPath.row == 4 {
+            AuthManager.shared.signOut { [weak self] success in
+                if success {
+                    DispatchQueue.main.async {
+//                        UserDefaults.standard.set(nil, forKey: "email")
+//                        UserDefaults.standard.set(nil, forKey: "name")
+//                        UserDefaults.standard.set(false, forKey: "premium")
+
+                        let signInVC = SignInViewController()
+                        signInVC.navigationItem.largeTitleDisplayMode = .always
+
+                        let navVC = UINavigationController(rootViewController: signInVC)
+                        navVC.navigationBar.prefersLargeTitles = true
+                        navVC.modalPresentationStyle = .fullScreen
+                        self?.present(navVC, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+        
         return
     }
 

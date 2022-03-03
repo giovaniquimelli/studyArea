@@ -80,6 +80,7 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLayoutSubviews()
         tableView.backgroundColor = .systemGray6
         tableView.frame = view.bounds
+        
         textInputButton.frame = CGRect(x: 10, y: view.height-50, width: view.width-60, height: 40)
         sendButton.frame = CGRect(x: textInputButton.right, y: view.height-50, width: 40, height: 40)
     }

@@ -17,27 +17,27 @@ final class AuthManager {
         return true
     }
 
-    public func signUp(
-        email: String,
-        password: String,
-        completion: @escaping (Bool) -> Void
-    ) {
-//        guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
-//              !password.trimmingCharacters(in: .whitespaces).isEmpty,
-//              password.count >= 6 else {
-//            return
-//        }
-
-//        auth.createUser(withEmail: email, password: password) { result, error in
-//            guard result != nil, error == nil else {
-//                completion(false)
-//                return
-//            }
-
-            // Account Created
-            completion(true)
-//        }
-    }
+//    public func signUp(
+//        email: String,
+//        password: String,
+//        completion: @escaping (Bool) -> Void
+//    ) {
+////        guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
+////              !password.trimmingCharacters(in: .whitespaces).isEmpty,
+////              password.count >= 6 else {
+////            return
+////        }
+//
+////        auth.createUser(withEmail: email, password: password) { result, error in
+////            guard result != nil, error == nil else {
+////                completion(false)
+////                return
+////            }
+//
+//            // Account Created
+//            completion(true)
+////        }
+//    }
 
     public func signIn(
         email: String,

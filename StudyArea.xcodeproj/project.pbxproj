@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F14F8FD27CD9DB5002E7399 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F14F8FC27CD9DB5002E7399 /* SignInViewController.swift */; };
+		3F14F90727CD9E57002E7399 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F14F90627CD9E57002E7399 /* SignInHeaderView.swift */; };
 		3F30D79B27A95A920062D2C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D79A27A95A920062D2C0 /* AppDelegate.swift */; };
 		3F30D79D27A95A920062D2C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F30D79C27A95A920062D2C0 /* SceneDelegate.swift */; };
 		3F30D7A227A95A920062D2C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F30D7A027A95A920062D2C0 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F14F8FC27CD9DB5002E7399 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		3F14F90627CD9E57002E7399 /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
 		3F30D79727A95A920062D2C0 /* StudyArea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyArea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F30D79A27A95A920062D2C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F30D79C27A95A920062D2C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F14F8FB27CD9DA8002E7399 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3F14F8FC27CD9DB5002E7399 /* SignInViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3F14F90527CD9E48002E7399 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3F14F90627CD9E57002E7399 /* SignInHeaderView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		3F30D78E27A95A920062D2C0 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +203,7 @@
 		3F30D7E927A96AED0062D2C0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F14F8FB27CD9DA8002E7399 /* Auth */,
 				3FDB0AD027C55230006A0A2A /* Session */,
 				3F30D7EA27A96AF70062D2C0 /* Core Tabs */,
 			);
@@ -223,6 +244,7 @@
 		3FB1F6A227AAFF0000426839 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F14F90527CD9E48002E7399 /* Auth */,
 				3F75A0F927C6B3C4006D3F35 /* MessageCells */,
 				3FB1F6A327AAFF0700426839 /* Cells */,
 			);
@@ -410,9 +432,11 @@
 				3FB1F6BB27AB009B00426839 /* AuthManager.swift in Sources */,
 				3F98F1E927B427BE0091A2E6 /* ProfileLogOutTableViewCell.swift in Sources */,
 				3FDB0ADA27C563C9006A0A2A /* Messages.swift in Sources */,
+				3F14F8FD27CD9DB5002E7399 /* SignInViewController.swift in Sources */,
 				3FB1F6B327AB007200426839 /* HapticsManager.swift in Sources */,
 				3FB1F6A527AAFF1400426839 /* AreaPreviewTableViewCell.swift in Sources */,
 				3F75A0FB27C6B3E7006D3F35 /* SystemMessageTableViewCell.swift in Sources */,
+				3F14F90727CD9E57002E7399 /* SignInHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
