@@ -1,5 +1,4 @@
 # Study Area App
-Work in progress...
 
 <p float="left">
   <img src="https://user-images.githubusercontent.com/98767301/174804760-951fb38c-5db8-4c70-8d33-6c492ab4a755.png" width="200" />
